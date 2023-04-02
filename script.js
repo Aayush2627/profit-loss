@@ -5,11 +5,11 @@ const button=document.querySelector(".button");
 const output=document.querySelector(".output");
 button.addEventListener('click', clickHandler);
 function clickHandler(){
-    var initialPrice=initial.value;
-    var currentPrice=current.value;
-    var quantityValue=quantity.value;
+    const initialPrice=parseInt(initial.value);
+    const currentPrice=parseInt(current.value);
+    const quantityValue=parseInt(quantity.value);
     if(initialPrice&&currentPrice&&quantityValue){
-    var profitLoss=calculateProfitAndLoss(initialPrice,currentPrice,quantityValue);
+    const profitLoss=calculateProfitAndLoss(initialPrice,currentPrice,quantityValue);
     output.innerText=profitLoss;
     if(currentPrice>initialPrice){
         output.style.color='green'
@@ -27,6 +27,7 @@ function calculateProfitAndLoss(cost ,sell,qty){
     if(cost>sell){
         const loss=(cost-sell)*qty;
         const lossPercent=(loss/(cost*qty))*100;
+        console.log(cost, sell , loss,lossPercent);
         return `The Loss is ${loss} and the loss percentage is ${lossPercent.toFixed(2)}%`;
     }else if(sell>cost){
         const profit=(sell-cost)*qty;
