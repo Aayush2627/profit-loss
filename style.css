@@ -6,7 +6,8 @@
 }
 main {
 	display: flex;
-	height: 100vh;
+    height:100vh;
+
 }
 h1{
     padding-bottom: 1rem;
@@ -18,11 +19,17 @@ label{
     font-weight: bold;
 }
 input{
-    display:block;
+    display:flex;
     font-size:20px;
     margin:auto;
     margin-top:1rem;
     border-radius:0.3rem;
+    padding:.5rem;
+    margin-bottom:10px;
+    height: 38px;
+    max-width:250px;
+    box-sizing: border-box;
+
 }
 
 button{
@@ -31,19 +38,24 @@ button{
     background-color:white;
     color:black;
     border-radius:0.4rem;
+    padding:.5rem;
 }
 .left{
+    display:flex;
     width:50%;
     background-color: black;
     text-align: center;
-    padding-top: 20rem;
+    padding-top:auto;
     color:white;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .right{
     width:50%;
-    background-color: aliceblue;
+    background-color: white;
     text-align: center;
-    padding-top: 2rem;
+    padding-top:auto;
     display: flex;
 
 }
@@ -51,4 +63,44 @@ button{
     width:70%;
     margin:auto;
     font-size:2rem;
+}
+@media screen and (max-width:580px){
+    label{
+        font-size: 1em;
+    }
+    input{
+        font-size: small;
+        width: 150px;
+        height:30px;
+    }
+    button{
+        font-size: small;
+    }
+    h1{
+        font-size:1.2em;
+    }
+    .right > div{
+        font-size:1.2em;
+    }
+
+}
+@media screen and (max-width:360px){
+    label{
+        font-size: xx-small;
+    }
+    input{
+        font-size: xx-small;
+        width: 90px;
+        height:20px;
+    }
+    button{
+        font-size: 0.5rem;
+    }
+    h1{
+        font-size:small;
+    }
+    .right > div{
+        font-size:x-small;
+    }
+
 }
